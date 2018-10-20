@@ -7,12 +7,21 @@ beforeEach(() => {
   wrapped = mount(<CommentBox />);
 });
 
-it("has as textarea and button", () => {
-  //const dom = mount(<CommentBox />);
+afterEach(() => {
+  wrapped.unmount();
+});
+
+it("has a textarea and a button", () => {
   expect(wrapped.find("textarea").length).toEqual(1);
   expect(wrapped.find("button").length).toEqual(1);
 });
 
-afterEach(() => {
-  wrapped.unmount();
+it("has a textarea that user can type in", () => {
+  wrapped.find("textarea").simulate("change", {
+    target: {
+      value: "newValue"
+    }
+  });
+  wrapped.update();
+  expect(wrapped.find("textarea").prop("value")).toEqual("newValue");
 });
