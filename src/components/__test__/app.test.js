@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import App from "../app";
-import CommentBox from "../commentBox";
+import App from "components/app";
+import CommentBox from "components/commentBox";
 import { shallow } from "enzyme";
-import CommentList from "../commnetList";
+import CommentList from "components/commnetList";
 
 it("shows comment box and comment list", () => {
   const div = document.createElement("div");
