@@ -4,12 +4,15 @@ import { shallow, mount, unmount } from "enzyme";
 
 let wrapped;
 beforeEach(() => {
-  wrapped = shallow(<CommentBox />);
+  wrapped = mount(<CommentBox />);
 });
 
 it("has as textarea and button", () => {
-  const dom = mount(<CommentBox />);
-  expect(dom.find("textarea").length).toEqual(1);
-  expect(dom.find("button").length).toEqual(1);
-  dom.unmount();
+  //const dom = mount(<CommentBox />);
+  expect(wrapped.find("textarea").length).toEqual(1);
+  expect(wrapped.find("button").length).toEqual(1);
+});
+
+afterEach(() => {
+  wrapped.unmount();
 });
