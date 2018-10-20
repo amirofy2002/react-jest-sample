@@ -17,7 +17,7 @@ it("shows comment box and comment list", () => {
   // look inside the div and check for CommentBox
   console.log(div.innerHTML);
 
-  expect(div.innerHTML).toContain("Comment Box");
+  expect(div.innerHTML).toContain("Add a comment:");
   expect(div.innerHTML).toBeTruthy();
 
   ReactDOM.unmountComponentAtNode(div);
